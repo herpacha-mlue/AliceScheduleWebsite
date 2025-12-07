@@ -1,0 +1,165 @@
+:root {
+/* COLOR PALETTE */
+--clr-primary-cta: #48addb;          /* Button Color (Light Blue) */
+--clr-background-dark: #48addb;      /* Deep Blue Hero Background */
+--clr-text-light: #FFFFFF;           /* White Text */
+--clr-neutral-canvas: #f3ffff;       /* Light Blue Top Bar */
+--clr-baby-blue: #9bc7d6;            /* Main Body Background */
+--clr-hover-bright: #79d1fa;         /* Brighter hover color */
+}
+
+/* FOOTER SETUP */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 1.  layout on body */
+html, body {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column; /* Stacks header, main, footer vertically */
+    font-family: sans-serif; 
+    line-height: 1.6;
+    background-color: var(--clr-baby-blue); 
+    color: var(--clr-background-dark); 
+}
+
+/* 2. CRITICAL LAYOUT FIX: Force main content to push footer down */
+main {
+    flex-grow: 1; /* This pushes the footer to the bottom */
+    background-color: var(--clr-baby-blue); /* Ensures any space outside hero is light blue */
+}
+
+/* UTILITIES */
+.text-light {
+    color: var(--clr-text-light);
+}
+.container {
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+
+
+/* --- HEADER STYLING --- */
+.main-header {
+    background-color: var(--clr-neutral-canvas); 
+    padding: 2rem 0;
+    box-shadow: none;
+}
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--clr-background-dark);
+}
+.logo-link h1 {
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+}
+.logo-link img {
+    height: 30px; 
+}
+
+/* NAVIGATION LINKS  */
+.header-actions a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    margin-left: 1rem;
+    border-radius: 20px; 
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+.header-link {
+    color: var(--clr-text-light); 
+    background-color: var(--clr-primary-cta);
+}
+.header-link:hover {
+    background-color: var(--clr-hover-bright); 
+}
+.cta-button {
+    background-color: var(--clr-primary-cta); 
+    color: var(--clr-text-light);
+}
+.cta-button:hover {
+    background-color: var(--clr-hover-bright); 
+}
+
+/* --- HERO SECTION MIDDLE--- */
+.hero-section {
+    background-color: var(--clr-baby-blue);
+    padding: 3rem 0; 
+    text-align: center; 
+}
+.hero-section h1 {
+    font-size: 4rem; 
+    margin-bottom: 1rem;
+    color: var(--clr-text-light); 
+}
+
+.hero-section p {
+    font-size: 2rem; 
+    margin-bottom: 2.5rem;
+}
+
+/* SEARCH BLOCK STYLING */
+.search-block {
+    display: flex; 
+    justify-content: left; 
+    max-width: 700px; 
+    margin: 0 auto; 
+}
+.search-input {
+    flex-grow: 1; 
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    outline: none; 
+    background-color: white; 
+    border-radius: 25px; 
+}
+.search-block .cta-button {
+    background-color: var(--clr-primary-cta); 
+    color: var(--clr-text-light);
+    border: none;
+    padding: 1rem 2rem;
+    margin-left: 1.5rem; 
+    border-radius: 25px; 
+    font-size: 1rem;
+}
+.search-block .cta-button:hover {
+    background-color: var(--clr-hover-bright);
+}
+
+/* --- FOOTER STYLING --- */
+footer {
+    /* Footer background matches the Hero section for visual separation at the bottom */
+    background-color: var(--clr-baby-blue); 
+    padding: 1rem 0;
+    color: var(--clr-text-light);
+    text-align: center;
+}
+
+
+/* --- GALLERY IMAGE STYLING --- */
+.gallery-image {
+    width: 33.33%; 
+    height: 150px; 
+    
+   
+    object-fit: cover; 
+    
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alice Schedule Search Results</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    
+    <header class="main-header">
+        <nav class="header-nav container">
+            <a href="index.html" class="logo-link">
+                <img src="logo.svg" alt="Alice Schedule Logo"> 
+                <h1>ALICE SCHEDULE</h1>
+            </a>
+            
+            <div class="header-actions">
+                <a href="about-product.html" class="cta-button">Product</a>
+                <a href="contact.html" class="cta-button">Contact</a>
+                <a href="login-page.html" class="cta-button">Login</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container" style="padding: 5rem 0;">
+            <h2 style="color: var(--clr-text-light); font-size: 2.5rem; text-align: center; margin-bottom: 0.5rem;">
+                Search Results for: 
+                <span id="search-query-display" style="color: var(--clr-text-light); font-weight: bold;">[Loading...]</span>
+            </h2>
+            <p style="color: var(--clr-text-light); font-size: 1.2rem; text-align: center; margin-bottom: 3rem; opacity: 0.7;">
+                Found 5 local services matching your search.
+            </p>
+
+            <div id="results-list" style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;">
+
+                <div style="background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); text-align: left;">
+                    <h3 style="color: var(--clr-primary-cta); margin-bottom: 0.5rem;">Dr. Anna Smith - General Dentist</h3>
+                    <p style="color: #555; margin-bottom: 0.5rem;">*4.9 Stars (120 reviews) | Accepting New Patients</p>
+                    <p style="color: #555;">Availability Today: **3:00 PM, 4:30 PM**</p>
+                    <a href="#" class="cta-button" style="float: right; padding: 0.5rem 1rem; text-decoration: none; margin-top: -30px;">Book Now</a>
+                </div>
+
+                <div style="background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); text-align: left;">
+                    <h3 style="color: var(--clr-primary-cta); margin-bottom: 0.5rem;">QuickFix Auto Repair</h3>
+                    <p style="color: #555; margin-bottom: 0.5rem;">*4.5 Stars (50 reviews) | Oil Change & Tire Services</p>
+                    <p style="color: #555;">Availability Tomorrow: **9:00 AM, 11:00 AM**</p>
+                    <a href="#" class="cta-button" style="float: right; padding: 0.5rem 1rem; text-decoration: none; margin-top: -30px;">Book Now</a>
+                </div>
+                
+                <div style="background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); text-align: left;">
+                    <h3 style="color: var(--clr-primary-cta); margin-bottom: 0.5rem;">Elite Hair Studio</h3>
+                    <p style="color: #555; margin-bottom: 0.5rem;">*4.7 Stars (200 reviews) | Haircuts and Color Services</p>
+                    <p style="color: #555;">Availability Today: **Available Now!**</p>
+                    <a href="#" class="cta-button" style="float: right; padding: 0.5rem 1rem; text-decoration: none; margin-top: -30px;">Book Now</a>
+                </div>
+
+            </div>
+            
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; <time datetime="2025">2025</time> Alice Schedule</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const query = urlParams.get('query');
+            
+            if (query) {
+                // Capitalize the first letter for a clean display
+                const capitalizedQuery = query.charAt(0).toUpperCase() + query.slice(1);
+                document.getElementById('search-query-display').textContent = capitalizedQuery;
+            } else {
+                document.getElementById('search-query-display').textContent = 'All Services';
+            }
+        });
+    </script>
+</body>
+</html>

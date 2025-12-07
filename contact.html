@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alice Schedule | Contact Us</title>
+    
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    
+    <header class="main-header">
+        <nav class="header-nav container">
+            <a href="index.html" class="logo-link">
+                <img src="logo.svg" alt="Alice Schedule Logo"> 
+                <h1>ALICE SCHEDULE</h1>
+            </a>
+            
+            <div class="header-actions">
+                <a href="about-product.html" class="cta-button">Product</a>
+                <a href="contact.html" class="cta-button">Contact</a>
+                <a href="login-page.html" class="cta-button">Login</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container" style="padding: 5rem 0; text-align: center;">
+            <h2 style="color: var(--clr-text-light); font-size: 2rem; margin-bottom: 0.5rem;">Get in Touch</h2>
+            <p id="form-message-status" style="color: var(--clr-text-light); font-size: 1.2rem; margin-bottom: 2rem;">We're here to help! Send us a message.</p>
+
+            <form id="contact-form" action="#" method="POST" style="max-width: 500px; margin: 0 auto; padding: 20px; background: rgba(255, 255, 255, 0.8); border-radius: 8px;">
+
+                <div style="margin-bottom: 15px; text-align: left;">
+                    <label for="name" style="display: block; color: var(--clr-primary-cta); font-weight: bold; margin-bottom: 5px;">Your Name</label>
+                    <input type="text" id="name" name="name" required
+                           style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+                </div>
+
+                <div style="margin-bottom: 15px; text-align: left;">
+                    <label for="email" style="display: block; color: var(--clr-primary-cta); font-weight: bold; margin-bottom: 5px;">Email Address</label>
+                    <input type="email" id="email" name="email" required
+                           style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+                </div>
+
+                <div style="margin-bottom: 20px; text-align: left;">
+                    <label for="message" style="display: block; color: var(--clr-primary-cta); font-weight: bold; margin-bottom: 5px;">Message</label>
+                    <textarea id="message" name="message" rows="5" required
+                              style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;"></textarea>
+                </div>
+
+                <button type="submit" class="cta-button" 
+                        style="width: 100%; border: none; padding: 12px 0; font-size: 1rem; cursor: pointer; border-radius: 4px;">
+                    Send Message
+                </button>
+            </form>
+
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; <time datetime="2025">2025</time> Alice Schedule</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            // 1. Prevents the page from reloading when the form is submitted
+            event.preventDefault(); 
+            
+            // 2. Hide the form
+            document.getElementById('contact-form').style.display = 'none';
+            
+            // 3. Display the success message
+            document.getElementById('form-message-status').innerHTML = 'MESSAGE SENT! Thank you for reaching out.';
+            document.getElementById('form-message-status').style.color = '#3498db';
+            document.getElementById('form-message-status').style.fontWeight = 'bold';
+            document.getElementById('form-message-status').style.fontSize = '2rem';
+        });
+    </script>
+</body>
+</html>
+</html>

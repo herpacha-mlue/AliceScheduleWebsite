@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alice Schedule: Intelligent Booking, Effortless Living</title>
+    
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    
+    <header class="main-header">
+        <nav class="header-nav container">
+            <a href="index.html" class="logo-link">
+                <img src="logo.svg" alt="Alice Schedule Logo"> 
+                <h1>ALICE SCHEDULE</h1>
+            </a>
+            
+            <div class="header-actions">
+                <a href="about-product.html" class="cta-button">Product</a>
+                <a href="contact.html" class="cta-button">Contact</a>
+                <a href="login-page.html" class="cta-button">Login</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section text-light">
+            <div class="container">
+                <h1>Alice Schedule: Intelligent Booking, Effortless Living</h1>
+                <p class="text-light">Find, book, and manage all your appointments</p>
+                
+                <div class="search-block">
+                    <input type="text" id="search-input" placeholder="Search for service, e.g., Dentist, Hair Salon, or Mechanic" class="search-input">
+                    <button id="book-now-button" class="cta-button">Book Now</button>
+                </div>
+                
+                <div class="image-gallery-row" style="display: flex; gap: 20px; justify-content: center; margin-top: 40px; max-width: 900px; margin-left: auto; margin-right: auto;">
+                    <img src="mechanic.jpg" alt="Mechanic booking" class="gallery-image">
+                    <img src="doctor.jpg" alt="Doctor booking" class="gallery-image">
+                    <img src="hair.jpg" alt="Hair salon booking" class="gallery-image">
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; <time datetime="2025">2025</time> Alice Schedule</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('book-now-button').addEventListener('click', function() {
+            var searchTerm = document.getElementById('search-input').value;
+            // This redirects the user to the search-results.html page
+            window.location.href = 'search-results.html?query=' + encodeURIComponent(searchTerm);
+        });
+    </script>
+</body>
+</html>

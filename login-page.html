@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alice Schedule | Login / Sign Up</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    
+    <header class="main-header">
+        <nav class="header-nav container">
+            <a href="index.html" class="logo-link">
+                <img src="logo.svg" alt="Alice Schedule Logo"> 
+                <h1>ALICE SCHEDULE</h1>
+            </a>
+            
+            <div class="header-actions">
+                <a href="about-product.html" class="cta-button">Product</a>
+                <a href="contact.html" class="cta-button">Contact</a>
+                <a href="login-page.html" class="cta-button">Login</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+    <section class="container" style="padding: 5rem 0; text-align: center;">
+        <h2 style="color: var(--clr-text-light); font-size: 2.5rem; margin-bottom: 0.5rem;">Access Your Alice Schedule Dashboard</h2>
+        
+        <p id="auth-status-message" style="color: var(--clr-text-light); font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.7;">
+            Log in if you're a returning user, or sign up to create your free account.
+        </p>
+
+        <div style="display: flex; gap: 30px; justify-content: center; max-width: 900px; margin: 0 auto;">
+            
+            <div id="login-form-container" style="flex: 1; min-width: 300px; padding: 25px; background: rgba(255, 255, 255, 0.8); border-radius: 8px; text-align: left;">
+                <h3 style="color: var(--clr-background-dark); margin-bottom: 1.5rem;">Existing User Login</h3>
+                
+                <form id="login-form" action="#" method="POST">
+                    <div style="margin-bottom: 15px;">
+                        <label for="login-email" style="display: block; color: var(--clr-primary-cta); font-weight: bold; margin-bottom: 5px;">Email</label>
+                        <input type="email" id="login-email" name="login-email" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label for="login-password" style="display: block; color: var(--clr-primary-cta); font-weight: bold; margin-bottom: 5px;">Password</label>
+                        <input type="password" id="login-password" name="login-password" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+                    <button type="submit" class="cta-button" style="width: 100%; padding: 12px 0;">Log In</button>
+                </form>
+            </div>
+
+            <div id="signup-form-container" style="flex: 1; min-width: 300px; padding: 25px; background: rgba(255, 255, 255, 0.8); border-radius: 8px; text-align: left;">
+                <h3 style="color: var(--clr-background-dark); margin-bottom: 1.5rem;">First Time User? Sign Up</h3>
+                
+                <form id="signup-form" action="#" method="POST">
+                    <div style="margin-bottom: 15px;">
+                        <label for="signup-email" style="display: block; color: var(--clr-primary-cta); font-weight: bold; margin-bottom: 5px;">Email</label>
+                        <input type="email" id="signup-email" name="signup-email" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label for="signup-password" style="display: block; color: var(--clr-primary-cta); font-weight: bold; margin-bottom: 5px;">Create Password</label>
+                        <input type="password" id="signup-password" name="signup-password" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+                     <div style="margin-bottom: 20px;">
+                        <label for="signup-name" style="display: block; color: var(--clr-primary-cta); font-weight: bold; margin-bottom: 5px;">Your Name</label>
+                        <input type="text" id="signup-name" name="signup-name" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+                    <button type="submit" class="cta-button" style="width: 100%; padding: 12px 0;">Create Account</button>
+                </form>
+            </div>
+        </div>
+        
+    </section>
+</main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; <time datetime="2025">2025</time> Alice Schedule</p>
+        </div>
+    </footer>
+    <script>
+    // Function to handle successful Login
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+        
+        // Hide both forms
+        document.getElementById('login-form-container').style.display = 'none';
+        document.getElementById('signup-form-container').style.display = 'none';
+
+        // Display "Signed in!" message
+        document.getElementById('auth-status-message').innerHTML = 'Signed in! Welcome back to Alice Schedule.';
+        document.getElementById('auth-status-message').style.color = '#3498db'; 
+        document.getElementById('auth-status-message').style.fontWeight = 'bold';
+        document.getElementById('auth-status-message').style.fontSize = '2.5rem';
+    });
+
+    // Function to handle successful Sign Up
+    document.getElementById('signup-form').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+        
+        // Hide both forms
+        document.getElementById('login-form-container').style.display = 'none';
+        document.getElementById('signup-form-container').style.display = 'none';
+
+        // Display "Successfully signed up!" message
+        document.getElementById('auth-status-message').innerHTML = 'Successfully signed up! You can now access your account.';
+        document.getElementById('auth-status-message').style.color = '#3498db'; 
+        document.getElementById('auth-status-message').style.fontWeight = 'bold';
+        document.getElementById('auth-status-message').style.fontSize = '2.5rem';
+    });
+</script>
+</body>
+</html>
